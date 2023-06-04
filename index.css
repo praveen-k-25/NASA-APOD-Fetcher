@@ -4,7 +4,7 @@
     padding: 15px;
     text-align: left;
 }
-#nasa_image img{
+#current-image-container img{
     width: 100%;
     aspect-ratio: 3/2;
 }
@@ -20,7 +20,7 @@
     font-weight: bold;
 }
 
-#dates li{
+#search-history li{
     margin: 5px;
 }
 ul {
