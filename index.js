@@ -3,7 +3,7 @@ let visit_list = [];
 // Setaup an Object Array in the alocal storage
 localStorage.setItem("Searches",JSON.stringify(visit_list));
 
-const data_list = document.getElementById("dates");
+const data_list = document.getElementById("search-history");
 
 
 //–-----    When the web age load it get's ecxecuted. -------
