@@ -1,12 +1,15 @@
 let visit_list = [];
+
+// Setaup an Object Array in the alocal storage
 localStorage.setItem("Searches",JSON.stringify(visit_list));
 
 const data_list = document.getElementById("dates");
 
-// -----------------------------------------------------------------------------------------------------------------
 
+//–-----    When the web age load it get's ecxecuted. -------
 document.addEventListener("DOMContentLoaded", getCurrentImageOfTheDay,max);
 
+// ------ Image of the present date has shown -------
 function getCurrentImageOfTheDay() {
     let currentDate = new Date().toISOString().split("T")[0];
     to_fetch(currentDate);
@@ -17,7 +20,7 @@ function max(){
     document.getElementById("search_input").setAttribute("max", currentDate);
 };
 
-// ----------------------------------------------------------------------------------------------------------
+// ---- When the shows the image at particular date ----
 
 document.getElementById("form_date").addEventListener("submit",getImageOfTheDay);
 
@@ -38,7 +41,7 @@ function getImageOfTheDay(event) {
     document.getElementById("date_on").innerHTML = `Picture On ${date}`;
       
 }
-// -----------------------------------------------------------------------------------------------------------------
+// ----- Save the date in the array ----;
 
 
 function saveSearch(date) {
@@ -46,7 +49,7 @@ function saveSearch(date) {
 }
 
 
-// ----------------------------------------------------------------------------------------------------------------------
+// ---- Save the visited date to the local storage area ----
 function addSearchToHistory() {
     data_list.innerHTML = "";
     let arr = JSON.parse(localStorage.getItem("Searches"));
@@ -69,6 +72,8 @@ function addSearchToHistory() {
 // to fetch the request from the server
 // 1 - sG3bsbJLHSCiaX8x451c4Vi6cQY4XhyyL2hSMrTA
 // 2 - QL00SFyBZtTw2Dlk9PbKjXPEQTHpDPFyiVAYQX6C
+
+// It fetch data from nasa server ------
 function to_fetch(date) {
     const api_key = "QL00SFyBZtTw2Dlk9PbKjXPEQTHpDPFyiVAYQX6C";
     var url = "https://api.nasa.gov/planetary/apod?api_key=" + api_key + "&date=" + date;
