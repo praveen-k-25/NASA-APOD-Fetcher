@@ -27,7 +27,7 @@ document.getElementById("form_date").addEventListener("submit",getImageOfTheDay)
 function getImageOfTheDay(event) {
     event.preventDefault();
 
-    let date = document.getElementById("search_input").value;
+    let date = document.getElementById("search-input").value;
     to_fetch(date);
 
     let arr = JSON.parse(localStorage.getItem("Searches"));
@@ -86,7 +86,7 @@ function to_fetch(date) {
         var content = data.explanation;
   
         // Display the image , title and content. 
-        var imageContainer = document.getElementById("nasa_image");
+        var imageContainer = document.getElementById("current-image-container");
         imageContainer.innerHTML = "<img src='" + imageUrl + "' alt='NASA Image'>";
         document.getElementById("title").innerHTML = title;
         document.getElementById("content").innerHTML = content;
